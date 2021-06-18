@@ -8,25 +8,9 @@
 .. description: 
 -->
 
-
-## Footnotes
-
-
- Bla bla <sup id="a1">[1](#f1)</sup>
+Dwi Sianto is passionate with data mining, pattern recognition, and machine learning.
 
 
- <b id="f1">1</b> Footnote content here. [↩](#a1)
-
-
-## Table
-
-
-| a | b |
-|-|-|
-| csdfasf | dasdfasf |
-| easd | gafd | 
-| e | ga | 
-
-
-`Inline code` with backticks
+<img src="../../images/11/11/GatechGT.png" width="138" height="126" />
+<img src="../../images/11/11/IBMWatson.png" width="138" height="126" />
 
