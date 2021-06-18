@@ -63,4 +63,5 @@ top_ps=${top_wt}/post
 # https://www.brainsorting.com/posts/create-a-blog-with-nikola/
 #
 
-# conda activate nk21, wk.sh 
+# conda activate nk21, 
+# wk.sh wk 

@@ -14,15 +14,29 @@ n1a_New(){
     echo cp ${top_wt}/pages/* ${BLG_DIR}/${nm}/pages
     echo cp -rf ${top_wt}/posts/* ${BLG_DIR}/${nm}/posts    
     echo cp -rf ${top_wt}/files ${BLG_DIR}/${nm}
-
+    echo cp -rf ${top_wt}/images ${BLG_DIR}/${nm}
+    
 }
 
+theme_lst=( "united"
+    "united"  "lux" "flatly"
+    "cerulean" "spacelab" "sketchy" "simplex"
+    "materia" "morph"
+    "vapor" "quartz" 
+"pulse" "sandstone" "minty"  "lumen" "cerulean" "litera" 
+"yeti")
 n1a_Build(){
-    echo "cd ${BLG_DIR}/${nm}; nikola build"
+    local opt_custom=${theme_lst[0]}
+    echo " cd ${BLG_DIR}/${nm}; nikola subtheme -n bootstrap4custom -p bootstrap4 -s ${opt_custom}"
+    echo " nikola build"
+    echo " cp ../../wt/assets/js/bootstrap.min.js.map output/assets/js"
+    #echo " cp -rf ${top_wt}/assets/js/* ${BLG_DIR}/${nm}/output/assets/js"
 }
 
 n1a_Serve(){
+    
     echo "cd ${BLG_DIR}/${nm}; nikola serve"
+    
 }
 
 n1a_Edit(){

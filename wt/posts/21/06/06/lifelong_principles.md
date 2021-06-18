@@ -10,19 +10,40 @@
 .. nocomments: true
 -->
 
-
-I summarize a few lifelong principles I have lived by for my sons who are growing up everyday . 
-My words and my actions over the year should have introduced these principles to them. These principles hopefully can carry them to adulthood.
+A productive day usually starts with good thoughts. 
+Essential principles are usually time management, family and friends. 
 
 
 # Hobby - Make time for yourself.
 
 
-Hobby is a kind of constructive activities that can be enjoyed in our leisure time and give us happiness and joy.
-Constructive activities channels positive energy into our body and mind. There are many type of constructive hobbies such as reading, writing, swimming, drawing, gardening, and playing a piano. 
-The feeling of joy and happiness is usually followed by a sense of accomplishment. Thus, hobby usually led to a productive 
+Hobby is a kind of constructive activities that can be enjoyed in our leisure time and give us happiness and joy. 
+Constructive activities channels positive energy into our body and mind. 
+There are many type of constructive hobbies such as reading, writing, swimming, drawing, gardening, and playing a piano. 
+The feeling of joy and happiness is usually followed by a sense of accomplishment. 
+Thus, hobby usually led to a happy, healthy and productive life. 
 
-A constructive hobby can be enjoyed everyday. It can be started from childhood, be performed at own pace, and can be developed at any age till the end of life. 
+A positive and constructive hobby can be as simple as fast walking or deep breathing exercise. 
+Expensive gears and time-consuming routines are not necessary for a constructive hobby. 
+Some positive hobbies require expensive gears such as playing piano or building electronic devices.
+Investment in expensive gears can be justified based on the level of experinces and expertise.
+These constructive hobbies can be started from childhood, be performed at own pace everday, and can be developed at any age till the end of life. 
+
+
+# Family & Friends 
+
+
+I am so proud to have raised two boys. 
+A few lifelong principles I have lived by are summarized for my sons who are growing up everyday. 
+My words and my actions over the year should have introduced these principles to them. 
+They have practiced those principle once in their lifetime. 
+These routines hopefully can carry them to adulthood.
+
+
+<!--
+I am proud to have raised two young boys – and am so confident as he enters the world of adulthood, the values I jotted down above are not new to him, he has lived them thus far and I know he will in future, as he enters this new phase of his life.
+-->
+
 
 
 
@@ -92,7 +113,6 @@ You define your success – once you define it – follow it with all your passi
 
 And finally – the moto I have lived through out my life. And it has never been more evident than during this Pandemic. The work will come and go – what stays with you is your values and relationships. Everything else is not important.
 
-I am proud to have raised two young boys – and am so confident as he enters the world of adulthood, the values I jotted down above are not new to him, he has lived them thus far and I know he will in future, as he enters this new phase of his life.
 
 -->
 
@@ -101,4 +121,3 @@ I am proud to have raised two young boys – and am so confident as he enters th
 
 - https://www.linkedin.com/pulse/my-son-prepares-enter-new-phase-life-ashok-kumar
 - https://lifegoalsmag.com/7-reasons-why-having-a-hobby-is-important-25-ideas-to-get-you-started/
-- 

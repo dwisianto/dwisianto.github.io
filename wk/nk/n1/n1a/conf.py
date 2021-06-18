@@ -156,7 +156,8 @@ NAVIGATION_ALT_LINKS = {
 
 # Name of the theme to use.
 #THEME = "bootblog4"
-THEME = "bootstrap4"
+#THEME = "bootstrap4"
+THEME = "bootstrap4custom"
 
 # A theme color. In default themes, it might be displayed by some browsers as
 # the browser UI color (eg. Chrome on Android). Other themes might also use it
@@ -979,7 +980,8 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = ' <a href="mailto:{email}">Email    {author}</a> &copy; {date} '
+#CONTENT_FOOTER = ' <a href="mailto:{email}">Email    {author}</a> &copy; {date} '
+CONTENT_FOOTER = '  &copy; {date} '
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will

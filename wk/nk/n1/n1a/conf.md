@@ -12,6 +12,7 @@
   - [Katex](#katex)
 - [Draft](#draft)
   - [Private Posts](#private-posts)
+- [Journey](#journey)
 - [References](#references)
 
 
@@ -33,7 +34,19 @@ THEME = "bootstrap4"
 
 https://getnikola.com/handbook.html#getting-extra-themes
 
+Use the following command to find out the available themes
 
+```
+cd blg/n1a
+nikola theme -l
+
+```
+
+The subtheme can be derived from https://bootswatch.com. 
+
+```
+nikola subtheme -n boostrap4_litera -p boostrap4 -s litera
+```
 
 
 # Comments
@@ -117,6 +130,14 @@ DEPLOY_FUTURE = True
 ## Private Posts
 
 If you set the status metadata field of a post to private, it will not be shown in indexes and feeds. It will be compiled, and if you deploy it it will be made available, so it will not generate 404s for people who had linked to it.
+
+# Journey
+
+
+- 
+- 21 embedding images
+- 21-06-15 bootstrap extra theme
+
 
 
 # References
