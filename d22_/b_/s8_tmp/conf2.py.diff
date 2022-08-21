@@ -1,0 +1,32 @@
+20c20
+< project = 'og'
+---
+> project = 'dwisianto'
+33a34,42
+>     # Sphinx's own extensions
+>     "sphinx.ext.autodoc",
+>     "sphinx.ext.extlinks",
+>     "sphinx.ext.intersphinx",
+>     "sphinx.ext.mathjax",
+>     "sphinx.ext.todo",
+>     "sphinx.ext.viewcode",
+>     # External stuff
+>     "myst_parser"
+57c66,67
+< html_theme = 'alabaster'
+---
+> #html_theme = 'furo'
+> html_theme = 'sphinx_book_theme'
+62c72,80
+< html_static_path = ['_static']
+\ No newline at end of file
+---
+> html_static_path = ['_static']
+> 
+> html_css_files = ["custom.css"]
+> 
+> html_theme_options = {
+>     "repository_url": "https://github.com/dwisianto",
+>     "use_repository_button": True,
+> }
+> 

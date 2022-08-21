@@ -1,0 +1,389 @@
+#!/bin/bash
+
+#
+# conda install sphinx
+# conda install -c conda-forge sphinxcontrib-apidoc
+# conda install -c conda-forge myst-parser
+#
+# which sphinx-quickstart
+ana_bin=/usr/local/anaconda3/envs/og22b/bin
+s_build=${ana_bin}/sphinx-build
+s_apidoc=${ana_bin}/sphinx-apid
+s_quickstart=${ana_bin}/sphinx-quickstart
+
+#
+#
+#
+TARGET="./b"
+KODE="../src/ds1/d"
+CUSTOM="./b_"
+VERSION=2
+help="help"
+
+#
+# Source
+#
+S_Cfg=${CUSTOM}/s1_conf_
+S_Idx=${CUSTOM}/s2_index_
+S_Chg=${CUSTOM}/s3_change_
+S_Sttc=${CUSTOM}/s4_static_
+S_Tmpl=${CUSTOM}/s4_templates_
+S_Img=${CUSTOM}/s4_image_
+
+#
+# HOME
+#
+H_Src=${TARGET}/source
+H_Sttc=${H_Src}/_static
+H_Tmpl=${H_Src}/_templates
+
+usage_act=( "usage help" )
+#
+#
+#
+usage() {
+
+  nm1="u"
+  nm2="usage"
+  #echo "$@" - $nm1
+  case "$@" in
+    ${help} | ${nm1} | ${nm2} )
+      echo "# ${nm1} - ${nm2} "
+    ;;
+  esac
+
+}
+
+
+
+reset_act=( "rm -rf ${TARGET}" )
+#
+#
+#
+reset() {
+  nm1="reset"
+  nm2="r"
+  #echo "$@" - $nm1
+  case "$@" in
+    ${help} | ${nm1} | ${nm2} )
+      echo "# ${nm1} - ${nm2} "
+      echo "# ${reset_act[0]}"
+    ;;
+    ${nm1}- | ${nm2}- )
+      ${reset_act[0]}
+    ;;
+  esac
+
+}
+
+
+#
+# START
+#
+start_arg="--sep --project og --author dsm --release 0.0 --language en --no-batchfile"
+
+
+#  --ext-autodoc         enable autodoc extension
+#  --ext-doctest         enable doctest extension
+#  --ext-intersphinx     enable intersphinx extension
+#  --ext-todo            enable todo extension
+#  --ext-coverage        enable coverage extension
+#  --ext-imgmath         enable imgmath extension
+#  --ext-mathjax         enable mathjax extension
+#  --ext-ifconfig        enable ifconfig extension
+#  --ext-viewcode        enable viewcode extension
+#  --ext-githubpages     enable githubpages extension
+#  --extensions EXTENSIONS
+#start_ext="--ext-autodoc  --ext-viewcode"
+start_ext=""
+
+start_end=8
+start_act=(
+# 0:Start
+  "${s_quickstart} ${start_arg} ${start_ext} ${TARGET}"
+# 1:Conf
+  "patch ${H_Src}/conf.py ${S_Cfg}/conf${VERSION}.py.diff"
+# 2:INDEX-rst
+  "rm ${H_Src}/index.rst"
+# 3:INDEX-md
+  "cp ${S_Idx}/index${VERSION}.md ${H_Src}/index.md"
+# 4: Index Patching
+#  "patch ${H_Src}/index.md ${S_Idx}/index${VERSION}.md.diff"
+# 4. Static - custom css
+  "cp ${S_Sttc}/custom.css ${H_Sttc}"
+# 5 Template
+  "cp ${S_Tmpl}/* ${H_Tmpl}"
+# 6. ChangeLog
+  "cp ${S_Chg}/changelog.md ${H_Src}"
+# 7. Logo Images
+  "cp ${S_Img}/* ${H_Sttc}"
+# 0:Help
+#  "${s_quickstart} --help"
+#  "cp -rf ${TARGET}_/_templates_/* ${TARGET}/source/_templates"
+#  "cp -rf ${TARGET}_/_static_/* ${TARGET}/source/_static"
+#  "cp -rf ${TARGET}_/_pages_/* ${TARGET}/source/"
+x
+)
+
+
+
+#
+#
+#
+start() {
+
+  nm1="start"
+  nm2="s"
+  #echo "$@" - $nm1
+  case "$@" in
+    ${nm1} | ${nm2} )
+      echo " # ${reset_act[0]} "
+      for i in {1..6}
+      do
+        echo " # ${start_act[$i]} "
+      done
+    ;;
+    ${nm1}-help | ${nm2}-help | ${nm2}-h )
+      ${start_act[0]}
+    ;;
+    ${nm1}- | ${nm2}- )
+      ${reset_act[0]}
+      for (( c=0; c<= $start_end; c++ ))
+      do
+        echo "${start_act[$c]}"
+        ${start_act[$c]}
+      done
+    ;;
+  esac
+
+}
+
+
+
+
+api_act=( "${s_apidoc} --help"
+ "${s_apidoc} -f -o ${TARGET}/source ${KODE}"
+)
+
+#
+#
+#
+api() {
+  nm1="api"
+  nm2="a"
+  #echo "$@" - ${nm1}
+  case "$@" in
+    ${help} | ${nm1} | ${nm2} )
+      echo "# ${s_apidoc} "
+      echo "# ${api_act[1]} "
+    ;;
+    ${nm1}- | ${nm2}- )
+      ${api_act[1]}
+    ;;
+  esac
+
+}
+
+
+
+
+#
+# positional arguments:
+#  sourcedir         path to documentation source files
+#  outputdir         path to output directory
+#  filenames         a list of specific files to rebuild. Ignored if -a is specified
+#
+build_src=${TARGET}"/source "
+build_out=${TARGET}"/build "
+build_file=" -a "
+build_arg="  "
+build_act=( "${s_build} --help",
+  "${s_build} ${build_arg} ${build_src} ${build_out} ${build_file}"
+)
+build() {
+  nm1="build"
+  nm2="b"
+  #echo "$@" - $nm1
+  case "$@" in
+    ${help} | ${nm1} | ${nm2} )
+      echo "${build_act[1]}"
+    ;;
+  ${nm1}- | ${nm2}- )
+      ${build_act[1]}
+    ;;
+  esac
+
+}
+
+
+conda_act=(
+    # External stuff
+    "conda install -c conda-forge myst-parser"
+    # Internal
+    # "conda install -c conda-forge sphinx.ext.autodoc",
+    # "conda install -c conda-forge sphinx.ext.extlinks",
+    # "conda install -c conda-forge sphinx.ext.intersphinx",
+    # "conda install -c conda-forge sphinx.ext.mathjax",
+    # "conda install -c conda-forge sphinx.ext.todo",
+    # "conda install -c conda-forge sphinx.ext.viewcode",
+    )
+#
+#
+#
+conda() {
+  nm1="c"
+  nm2="conda"
+  case "$@" in
+    ${help} | ${nm1} | ${nm2} )
+      echo "# ${nm1} - ${nm2} "
+    ;;
+    ${nm1}- | ${nm2}- )
+      ${reset_act[0]}
+      for i in {1..3}
+      do
+        echo "${start_act[$i]}"
+        ${start_act[$i]}
+      done
+    ;;
+    ${nm1}- | ${nm2}- )
+      echo
+    ;;
+  esac
+}
+
+#
+#
+#
+diff_act=( "diff baseline current > diff_content"
+  "diff ${S_Cfg}/conf0.py ${H_Src}/conf.py > ${S_Cfg}/conf${VERSION}.py.diff"
+  "diff ${S_Idx}/index0.rst ${H_Src}/index.rst > ${S_Idx}/index${VERSION}.rst.diff"
+  "diff ${S_Idx}/index0.md ${H_Src}/index.md > ${S_Idx}/index${VERSION}.md.diff"
+  "${S_Cfg}/conf${VERSION}.py.diff"
+  "${S_Idx}/index${VERSION}.md.diff"
+  "${S_Idx}/index${VERSION}.rst.diff"
+  ""
+)
+
+
+
+#
+#
+#
+diff() {
+
+  nm1="diff"
+  nm2="d"
+  #echo "$@" - $nm1
+  case "$@" in
+    ${nm1}-cfg | ${nm2}-cfg )
+      #echo" diff ${TARGET}_/s3_/conf0.py ${TARGET}/source/conf.py > ${TARGET}_/s3_/conf${VERSION}.py.diff "
+      #echo " diff ${TARGET}_/s3_/conf0.py ${TARGET}/source/conf.py > ${TARGET}_/s3_/confv${VERSION}.py.diff "
+      #diff ${TARGET}_/s3_/conf0.py ${TARGET}/source/conf.py > ${TARGET}_/s3_/conf${VERSION}.py.diff
+      echo ${diff_act[1]}
+      ${diff_act[1]}
+    ;;
+    ${nm1}-idx-rst | ${nm2}-idx-rst )
+      #echo " diff ${TARGET}_/s3_/index0.rst ${TARGET}/source/index.rst > ${TARGET}_/s3_/index${VERSION}.rst.diff "
+      #diff ${TARGET}_/s3_/index0.rst ${TARGET}/source/index.rst > ${TARGET}_/s3_/index${VERSION}.rst.diff
+      echo ${diff_act[2]}
+      ${diff_act[2]}
+    ;;
+    ${nm1}-idx-md | ${nm2}-idx-md )
+      #echo " diff ${TARGET}_/s3_/index0.rst ${TARGET}/source/index.rst > ${TARGET}_/s3_/index${VERSION}.rst.diff "
+      #diff ${TARGET}_/s3_/index0.rst ${TARGET}/source/index.rst > ${TARGET}_/s3_/index${VERSION}.rst.diff
+      echo ${diff_act[3]}
+      ${diff_act[3]}
+    ;;
+    ${nm1}-all | ${nm2}-all )
+      for i in {1..3}
+      do
+        echo " # ${diff_act[$i]} "
+      done
+    ;;
+    ${nm1}-help | ${nm2}-help | ${nm2}-h )
+      echo ${diff_act[0]}
+    ;;
+  esac
+
+}
+
+
+
+#
+#
+#
+view_act=(
+  "open ${TARGET}/build/index.html"
+)
+
+view() {
+  nm1="view"
+  nm2="v"
+  #echo "$@" - $nm1
+  case "$@" in
+    ${help} | ${nm1} | ${nm2} )
+      echo "# ${nm1} - ${nm2} "
+      echo "${view_act[0]}"
+    ;;
+    ${nm1}- | ${nm2}- )
+      ${view_act[0]}
+    ;;
+  esac
+}
+
+
+#
+#
+#
+publish() {
+
+  nm1="publish"
+  nm2="p"
+  #echo "$@" - $nm1
+  case "$@" in
+    ${help} | ${nm1} | ${nm2} )
+      echo "# ${nm1} - ${nm2} "
+      echo " # ${reset_act[0]} "
+      for i in {1..6}
+      do
+        echo " # ${start_act[$i]} "
+      done
+
+      #
+      echo "# ${api_act[1]} "
+      echo "# ${build_act[1]}"
+      echo "# ${view_act[1]}"
+    ;;
+    ${nm1}-| ${nm2}- )
+      ${reset_act[0]}
+      for i in {1..6}
+      do
+        ${start_act[$i]}
+      done
+
+      #
+      ${api_act[1]}
+      ${build_act[1]}
+      ${view_act[1]}
+    ;;
+
+  esac
+}
+
+
+#
+#
+act(){
+
+  usage "$@"
+  reset "$@"
+  start "$@"
+  api   "$@"
+  build "$@"
+  conda "$@"
+  diff "$@"
+  view  "$@"
+  publish "$@"
+
+}
+act "$@"

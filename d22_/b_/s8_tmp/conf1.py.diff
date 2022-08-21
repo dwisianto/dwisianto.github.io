@@ -1,0 +1,14 @@
+33a34,42
+>     # Sphinx's own extensions
+>     "sphinx.ext.autodoc",
+>     "sphinx.ext.extlinks",
+>     "sphinx.ext.intersphinx",
+>     "sphinx.ext.mathjax",
+>     "sphinx.ext.todo",
+>     "sphinx.ext.viewcode",
+>     # External stuff
+>     "myst_parser"
+57c66
+< html_theme = 'alabaster'
+---
+> html_theme = 'furo'

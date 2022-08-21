@@ -1,0 +1,4 @@
+57c57
+< html_theme = 'alabaster'
+---
+> html_theme = 'furo'
